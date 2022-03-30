@@ -66,7 +66,7 @@ class Timestamp(datetime):
     def utcfromtimestamp(cls, ts: float) -> Timestamp: ...
     # Pandas doesn't accept timezone here, unlike datetime
     @classmethod
-    def fromtimestamp(cls: Type[_S], t: float) -> _S: ... # type: ignore[override]
+    def fromtimestamp(cls: Type[_S], t: float, tz: Optional[tzinfo] = ...) -> _S: ... # type: ignore[override]
     @classmethod
     def combine(cls, date: _date, time: time, tzinfo: Optional[tzinfo] = ...) -> Timestamp: ...
     @classmethod
